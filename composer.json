@@ -2,7 +2,7 @@
     "name":"bright-cloud-studio/page-tag-navigation",
     "description":"Dropdown navigation that helps users find specific pages on large sites",
     "homepage": "http://brightcloudstudio.com/",
-    "keywords":["panel", "pricing", "calculator", "bright", "cloud"],
+    "keywords":["page", "tag", "navigation", "bright", "cloud"],
     "type":"contao-module",
     "license":"LGPL-3.0-or-later",
     "authors":[
@@ -21,14 +21,14 @@
     "autoload": {
         "psr-4": {
             "Bcs\\": [
-                "system/modules/rep_finder/library/Bcs"
+                "system/modules/page-tag-navigation/library/Bcs"
             ]
         }
     },
     "extra": {
         "contao": {
             "sources": {
-                "system/modules/panel_pricing_calculator": "system/modules/panel_pricing_calculator"
+                "system/modules/page-tag-navigation": "system/modules/page-tag-navigation"
             }
         }
     },
