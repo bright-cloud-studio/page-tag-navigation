@@ -22,3 +22,4 @@
  * Back end modules
  */
 $GLOBALS['TL_LANG']['MOD']['parent_category'] = array('Parent Categories', 'Define Parent Categories');
+$GLOBALS['TL_LANG']['MOD']['child_category'] = array('Child Categories', 'Define Child Categories');
