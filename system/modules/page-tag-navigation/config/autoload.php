@@ -16,16 +16,6 @@
  */
 ClassLoader::addClasses(array
 (
-	'Bcs\Module\PanelPricingCalculatorModule' 	=> 'system/modules/panel_pricing_calculator/library/Bcs/Module/PanelPricingCalculatorModule.php',
-	'Bcs\Model\PanelPricingCalculator' 		=> 'system/modules/panel_pricing_calculator/library/Bcs/Model/PanelPricingCalculator.php',
-	'Bcs\Backend\PriceChartBackend' 		=> 'system/modules/panel_pricing_calculator/library/Bcs/Backend/PriceChartBackend.php',
-	'Bcs\Backend\PriceChartLargeBackend' 		=> 'system/modules/panel_pricing_calculator/library/Bcs/Backend/PriceChartLargeBackend.php',
-	'Bcs\Backend\CradlePricesBackend' 		=> 'system/modules/panel_pricing_calculator/library/Bcs/Backend/CradlePricesBackend.php',
-	'Bcs\Backend\QuoteRequestBackend' 		=> 'system/modules/panel_pricing_calculator/library/Bcs/Backend/QuoteRequestBackend.php'
-));
-
-/* Register the templates */
-TemplateLoader::addFiles(array
-(
-	'panel_pricing_calculator_module'			=> 'system/modules/panel_pricing_calculator/templates/modules'
+	'Bcs\Model\PageTagNavigation' 			=> 'system/modules/page-tag-navigation/library/Bcs/Model/PageTagNavigation.php',
+	'Bcs\Backend\ParentCategoryBackend' 		=> 'system/modules/page-tag-navigation/library/Bcs/Backend/ParentCategoryBackend.php',
 ));
