@@ -1,6 +1,6 @@
 {
-    "name":"bright-cloud-studio/panel-pricing-calculator",
-    "description":"Adds a panel pricing calculator with a front end module for users and a back end system for managing the data.",
+    "name":"bright-cloud-studio/page-tag-navigation",
+    "description":"Dropdown navigation that helps users find specific pages on large sites",
     "homepage": "http://brightcloudstudio.com/",
     "keywords":["panel", "pricing", "calculator", "bright", "cloud"],
     "type":"contao-module",
