@@ -1,6 +1,6 @@
 {
     "name":"bright-cloud-studio/page-tag-navigation",
-    "description":"Dropdown navigation that helps users find specific pages on large sites",
+    "description":"Create helpful category tags which can be assigned to pages to help users navigate complex sites",
     "homepage": "http://brightcloudstudio.com/",
     "keywords":["page", "tag", "navigation", "bright", "cloud"],
     "type":"contao-module",
