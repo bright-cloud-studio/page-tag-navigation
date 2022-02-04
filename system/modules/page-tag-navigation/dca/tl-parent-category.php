@@ -38,22 +38,22 @@ $GLOBALS['TL_DCA']['tl_parent_category'] = array
         'sorting' => array
         (
             'mode'                    => 1,
-            'fields'                  => array('name'),
+            'fields'                  => array('label'),
             'flag'                    => 1,
             'panelLayout'             => 'filter;search,limit'
         ),
         'label' => array
         (
-            'fields'                  => array('name'),
+            'fields'                  => array('label'),
             'format'                  => '%s'
         ),
         'global_operations' => array
         (
             'export' => array
             (
-                'label'               => 'Export Locations CSV',
+                'label'               => 'Export Parent Categories CSV',
                 'href'                => 'key=exportCategories',
-                'icon'                => 'system/modules/locations/assets/icons/file-export-icon-16.png'
+                'icon'                => 'system/modules/page-tag-navigation/assets/icons/file-export-icon-16.png'
             ),
             'all' => array
             (
@@ -68,33 +68,33 @@ $GLOBALS['TL_DCA']['tl_parent_category'] = array
         (
             'edit' => array
             (
-                'label'               => &$GLOBALS['TL_LANG']['tl_category']['edit'],
+                'label'               => &$GLOBALS['TL_LANG']['tl_parent_category']['edit'],
                 'href'                => 'act=edit',
                 'icon'                => 'edit.gif'
             ),
             'copy' => array
             (
-                'label'               => &$GLOBALS['TL_LANG']['tl_category']['copy'],
+                'label'               => &$GLOBALS['TL_LANG']['tl_parent_category']['copy'],
                 'href'                => 'act=copy',
                 'icon'                => 'copy.gif'
             ),
             'delete' => array
             (
-                'label'               => &$GLOBALS['TL_LANG']['tl_category']['delete'],
+                'label'               => &$GLOBALS['TL_LANG']['tl_parent_category']['delete'],
                 'href'                => 'act=delete',
                 'icon'                => 'delete.gif',
                 'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
             ),
             'toggle' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_category']['toggle'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_parent_category']['toggle'],
 				'icon'                => 'visible.gif',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => array('Asc\Backend\Categories', 'toggleIcon')
+				'button_callback'     => array('Asc\Backend\ParentCategory', 'toggleIcon')
 			),
             'show' => array
             (
-                'label'               => &$GLOBALS['TL_LANG']['tl_location']['show'],
+                'label'               => &$GLOBALS['TL_LANG']['tl_parent_category']['show'],
                 'href'                => 'act=show',
                 'icon'                => 'show.gif'
             )
@@ -125,23 +125,23 @@ $GLOBALS['TL_DCA']['tl_parent_category'] = array
 		),
 		'alias' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_category']['alias'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_parent_category']['alias'],
 			'exclude'                 => true,
 			'inputType'               => 'text',
 			'search'                  => true,
 			'eval'                    => array('unique'=>true, 'rgxp'=>'alias', 'doNotCopy'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
 			'save_callback' => array
 			(
-				array('Asc\Backend\Locations', 'generateAlias')
+				array('Asc\Backend\ParentCategory', 'generateAlias')
 			),
 			'sql'                     => "varchar(128) COLLATE utf8_bin NOT NULL default ''"
 
 		),
-		'name' => array
+		'label' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_category']['name'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_parent_category']['label'],
 			'inputType'               => 'text',
-			'default'				  => '',
+			'default'		  => '',
 			'search'                  => true,
 			'eval'                    => array('mandatory'=>true, 'tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
@@ -149,7 +149,7 @@ $GLOBALS['TL_DCA']['tl_parent_category'] = array
 		'published' => array
 		(
 			'exclude'                 => true,
-			'label'                   => &$GLOBALS['TL_LANG']['tl_category']['published'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_parent_category']['published'],
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true),
 			'sql'                     => "char(1) NOT NULL default ''"
