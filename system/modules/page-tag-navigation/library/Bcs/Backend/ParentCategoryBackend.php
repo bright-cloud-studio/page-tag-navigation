@@ -14,7 +14,7 @@
 namespace Bcs\Backend;
 
 use Contao\DataContainer;
-use Bcs\Model\PageTagNavigation;
+use Bcs\Model\ParentCategory;
 
 class ParentCategoryBackend extends \Backend
 {
