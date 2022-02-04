@@ -1,0 +1,36 @@
+{
+    "name":"bright-cloud-studio/panel-pricing-calculator",
+    "description":"Adds a panel pricing calculator with a front end module for users and a back end system for managing the data.",
+    "homepage": "http://brightcloudstudio.com/",
+    "keywords":["panel", "pricing", "calculator", "bright", "cloud"],
+    "type":"contao-module",
+    "license":"LGPL-3.0-or-later",
+    "authors":[
+        {
+            "name":"Bright Cloud Studio",
+            "homepage":"https://brightcloudstudio.com"
+        }
+    ],
+    "require":{
+        "php": "^7.0",
+        "contao/core-bundle": "^4.9"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bcs\\": [
+                "system/modules/rep_finder/library/Bcs"
+            ]
+        }
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "system/modules/panel_pricing_calculator": "system/modules/panel_pricing_calculator"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
