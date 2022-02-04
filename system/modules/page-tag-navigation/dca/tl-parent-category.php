@@ -90,7 +90,7 @@ $GLOBALS['TL_DCA']['tl_parent_category'] = array
 				'label'               => &$GLOBALS['TL_LANG']['tl_parent_category']['toggle'],
 				'icon'                => 'visible.gif',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => array('Asc\Backend\ParentCategory', 'toggleIcon')
+				'button_callback'     => array('Bcs\Backend\ParentCategoryBackend', 'toggleIcon')
 			),
             'show' => array
             (
@@ -104,7 +104,7 @@ $GLOBALS['TL_DCA']['tl_parent_category'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{category_legend},name,alias;{publish_legend},published;'
+        'default'                     => '{category_legend},label,alias;{publish_legend},published;'
     ),
  
     // Fields
@@ -132,7 +132,7 @@ $GLOBALS['TL_DCA']['tl_parent_category'] = array
 			'eval'                    => array('unique'=>true, 'rgxp'=>'alias', 'doNotCopy'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
 			'save_callback' => array
 			(
-				array('Asc\Backend\ParentCategory', 'generateAlias')
+				array('Bcs\Backend\ParentCategoryBackend', 'generateAlias')
 			),
 			'sql'                     => "varchar(128) COLLATE utf8_bin NOT NULL default ''"
 
