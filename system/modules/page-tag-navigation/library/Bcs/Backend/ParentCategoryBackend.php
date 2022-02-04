@@ -14,9 +14,9 @@
 namespace Bcs\Backend;
 
 use Contao\DataContainer;
-use Bcs\Model\PanelPricingCalculator;
+use Bcs\Model\PageTagNavigation;
 
-class PriceChartBackend extends \Backend
+class ParentCategoryBackend extends \Backend
 {
 	public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
 	{
@@ -40,9 +40,9 @@ class PriceChartBackend extends \Backend
 	public function toggleVisibility($intId, $blnVisible, DataContainer $dc=null)
 	{
 		// Trigger the save_callback
-		if (is_array($GLOBALS['TL_DCA']['tl_price_chart']['fields']['published']['save_callback']))
+		if (is_array($GLOBALS['TL_DCA']['tl_parent_category']['fields']['published']['save_callback']))
 		{
-			foreach ($GLOBALS['TL_DCA']['tl_price_chart']['fields']['published']['save_callback'] as $callback)
+			foreach ($GLOBALS['TL_DCA']['tl_parent_category']['fields']['published']['save_callback'] as $callback)
 			{
 				if (is_array($callback))
 				{
@@ -57,10 +57,10 @@ class PriceChartBackend extends \Backend
 		}
 
 		// Update the database
-		$this->Database->prepare("UPDATE tl_price_chart SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
+		$this->Database->prepare("UPDATE tl_parent_category SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
 					   ->execute($intId);
 
-		$this->log('A new version of record "tl_price_chart.id='.$intId.'" has been created'.$this->getParentEntries('tl_price_chart', $intId), __METHOD__, TL_GENERAL);
+		$this->log('A new version of record "tl_parent_category.id='.$intId.'" has been created'.$this->getParentEntries('tl_parent_category', $intId), __METHOD__, TL_GENERAL);
 	}
 	
 	public function generateAlias($varValue, DataContainer $dc)
@@ -74,7 +74,7 @@ class PriceChartBackend extends \Backend
 			$varValue = standardize(\StringUtil::restoreBasicEntities($dc->activeRecord->name));
 		}
 
-		$objAlias = $this->Database->prepare("SELECT id FROM tl_price_chart WHERE id=? OR alias=?")
+		$objAlias = $this->Database->prepare("SELECT id FROM tl_parent_category WHERE id=? OR alias=?")
 								   ->execute($dc->id, $varValue);
 
 		// Check whether the page alias exists
