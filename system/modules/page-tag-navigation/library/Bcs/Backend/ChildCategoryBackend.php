@@ -133,7 +133,7 @@ class ChildCategoryBackend extends \Backend
 		$result = $this->Database->prepare("SELECT * FROM tl_parent_category WHERE published=1")->execute();
 		while($result->next())
 		{
-			$cats = $cats + array($result->id => $result->name);
+			$cats = $cats + array($result->id => $result->label);
 		}
 		return $cats;
 		
