@@ -21,4 +21,4 @@ $GLOBALS['BE_MOD']['page-tag-navigation']['parent_category'] = array(
 );
 
 /* Models */
-$GLOBALS['TL_MODELS']['tl_page_tag_navigation'] = 'Bcs\Model\PageTagNavigation';
+$GLOBALS['TL_MODELS']['tl_parent_category'] = 'Bcs\Model\ParentCategory';
