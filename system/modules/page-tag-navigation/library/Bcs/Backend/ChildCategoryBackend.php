@@ -146,7 +146,7 @@ class ChildCategoryBackend extends \Backend
 		#);
 	}
 	
-	public function getChildCategories() { 
+	public function getChildCategories(DataContainer $dc) { 
 		$cats = array();
 		$this->import('Database');
 		$result = $this->Database->prepare("SELECT * FROM tl_child_category WHERE published=1")->execute();
@@ -154,6 +154,8 @@ class ChildCategoryBackend extends \Backend
 		{
 			$cats = $cats + array($result->id => $result->label);
 		}
+		
+		$cats = $cats + array($dc->id => "DC TEST");
 		return $cats;
 		
 		
