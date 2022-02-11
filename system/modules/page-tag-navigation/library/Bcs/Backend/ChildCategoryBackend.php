@@ -152,10 +152,19 @@ class ChildCategoryBackend extends \Backend
 		$result = $this->Database->prepare("SELECT * FROM tl_child_category WHERE published=1")->execute();
 		while($result->next())
 		{
-			$cats = $cats + array($result->id => $result->label);
+			// check all other pages, if this option is taken dont show it
+			$exists = false;
+			$result2 = $this->Database->prepare("SELECT * FROM tl_page WHERE published=1")->execute();
+			while($result2->next())
+			{
+				if($result2->page_tag_navigation_target == $result->id && $result2->id != $dc->id)
+					$exists = true;
+			}
+			if($exists != true)
+				$cats = $cats + array($result->id => $result->label);
 		}
 		
-		$cats = $cats + array($dc->id => "DC TEST");
+
 		return $cats;
 		
 		
