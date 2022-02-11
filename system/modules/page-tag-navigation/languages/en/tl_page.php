@@ -12,7 +12,7 @@
 
 
 /* Fields */
-$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target']          = array('Page Tag Redirect', 'Which option in the Page Tag Navigation will redirect to this page.');
+$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target']          = array('Page Tag Redirect', 'Which of the Page Tag Navigation\'s child option will this redirect the user to this page.');
 
 /* Legends */
 $GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_legend'] = 'Page Tag Navigation\'s Settings';
