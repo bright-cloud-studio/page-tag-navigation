@@ -13,6 +13,8 @@
  /* Extend the tl_user palettes */
 $GLOBALS['TL_DCA']['tl_page']['palettes']['regular'] = str_replace(';{publish_legend}', ';{page_tag_navigation_legend},page_tag_navigation_target;{publish_legend}', $GLOBALS['TL_DCA']['tl_page']['palettes']['regular']);
 
+
+/*
 $GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_target'] = array
 (
 	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target'],
@@ -22,4 +24,14 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_target'] = array
 		'tl_class'=>'long'
 	],
 	'sql'                   => "mediumtext NOT NULL default ''"
+);
+*/
+
+$GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_target'] = array
+(
+	'sql'                   => "varchar(255) NOT NULL default ''",
+	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target'],
+	'inputType'             => 'checkbox',
+	'options_callback'	=> array('Bcs\Backend\ChildCategoryBackend', 'getParentCategories'),										
+	'eval'                  => array('multiple'=>true, 'mandatory'=>true,'tl_class'=>'clr') 
 );
