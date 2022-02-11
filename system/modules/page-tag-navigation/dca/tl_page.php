@@ -32,6 +32,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_target'] = array
 	'sql'                   => "varchar(255) NOT NULL default ''",
 	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target'],
 	'inputType'             => 'checkbox',
-	'options_callback'	=> array('Bcs\Backend\ChildCategoryBackend', 'getParentCategories'),										
-	'eval'                  => array('multiple'=>true, 'mandatory'=>true,'tl_class'=>'clr') 
+	'options_callback'	=> array('Bcs\Backend\ChildCategoryBackend', 'getChildCategories'),										
+	'eval'                  => array('multiple'=>false, 'mandatory'=>flase,'tl_class'=>'clr') 
 );
