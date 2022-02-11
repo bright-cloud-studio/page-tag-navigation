@@ -33,5 +33,5 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_target'] = array
 	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target'],
 	'inputType'             => 'checkbox',
 	'options_callback'	=> array('Bcs\Backend\ChildCategoryBackend', 'getChildCategories'),										
-	'eval'                  => array('multiple'=>false, 'mandatory'=>flase,'tl_class'=>'clr') 
+	'eval'                  => array('multiple'=>false, 'mandatory'=>false,'tl_class'=>'clr') 
 );
