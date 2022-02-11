@@ -150,7 +150,7 @@ class ChildCategoryBackend extends \Backend
 		$cats = array();
 		
 		// add a blank option to if you dont want anything
-		$cats = $cats + array('' => 'Do Not Link');
+		$cats = $cats + array('' => 'Unlink Selections');
 		
 		$this->import('Database');
 		$result = $this->Database->prepare("SELECT * FROM tl_child_category WHERE published=1")->execute();
