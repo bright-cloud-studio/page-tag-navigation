@@ -12,7 +12,7 @@
 
  /* Extend the tl_user palettes */
 foreach ($GLOBALS['TL_DCA']['tl_page']['palettes'] as $k => $v) {
-    $GLOBALS['TL_DCA']['tl_page']['palettes'][$k] = str_replace('publish;', 'publish;{page_tag_navigation_legend},page_tag_navigation_target;', $v);
+    $GLOBALS['TL_DCA']['tl_page']['palettes'][$k] = str_replace('regular;', 'regular;{page_tag_navigation_legend},page_tag_navigation_target;', $v);
 }
 
 
