@@ -146,4 +146,23 @@ class ChildCategoryBackend extends \Backend
 		#);
 	}
 	
+	public function getChildCategories() { 
+		$cats = array();
+		$this->import('Database');
+		$result = $this->Database->prepare("SELECT * FROM tl_child_category WHERE published=1")->execute();
+		while($result->next())
+		{
+			$cats = $cats + array($result->id => $result->label);
+		}
+		return $cats;
+		
+		
+		#return array(
+		#	'1' => 'Onee',
+		#	'2' => 'Twoo',
+		#	'3' => 'Threee',
+		#	'4' => 'Fourr'
+		#);
+	}
+	
 }
