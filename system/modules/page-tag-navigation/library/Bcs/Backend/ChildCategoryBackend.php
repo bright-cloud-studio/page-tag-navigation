@@ -148,6 +148,10 @@ class ChildCategoryBackend extends \Backend
 	
 	public function getChildCategories(DataContainer $dc) { 
 		$cats = array();
+		
+		// add a blank option to if you dont want anything
+		$cats = $cats + array('' => 'Do Not Link');
+		
 		$this->import('Database');
 		$result = $this->Database->prepare("SELECT * FROM tl_child_category WHERE published=1")->execute();
 		while($result->next())
