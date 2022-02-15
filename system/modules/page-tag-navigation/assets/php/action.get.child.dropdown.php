@@ -5,4 +5,6 @@ include_once("prepend.page_tag_navigation.endpoint.php");
 
 $vars = $_POST;
 
-echo "Ding:" . $vars['parent_val']];
+
+$message = "Ding": . $vars['parent_val'];
+echo $message;
