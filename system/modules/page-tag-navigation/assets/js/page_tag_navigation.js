@@ -1,8 +1,8 @@
 // this is the call to save to cart
 function get_child_dropdown(){
 
-    // store our quote request values
-    var parent_val = $("#select_parent").val();
+	// store our quote request values
+	var parent_val = $('#select_parent').children(":selected").attr("id");
 	  
     // trigger this function when our form runs
     $.ajax({
