@@ -1,0 +1,36 @@
+<!–– Wrapper for the whole module on the page ––>
+<div class="mod_locations_list <?= $this->class ?>">
+	<!–– input for entering in the zip code, automatically update results on input ––>
+	<p class="enter_zip">Enter a ZIP Code to find reps in that area.</p>
+	<input name="locations_zip_input" class="locations_zip_input" type="text" name="zip" placeholder="Enter ZIP Code"><br>
+
+	<!–– This adds every listing onto the page but hidden, JS makes them visible if they match inputs ––>
+    <?php foreach($this->states as $state): ?>
+		<?= implode('', $state['locations']) ?>
+	<?php endforeach; ?>
+	
+	<!–– starts hidden, JS makes visible if no match on input ––>
+	<div class="state state_not_found" style="display: none;">
+		
+		<div class="location_default" id="location_default">
+			<div class="name"><span><strong>LAMVIN Inc.</strong></span></div>
+			<div class="address">
+				<span>4675 North Avenue<br>Oceanside, CA 92056</span><br>
+				<span><strong>Phone: </strong><a href="tel:8004466329">800-446-6329</a></span><br>
+				<span><strong>Fax: </strong><a href="fax:+760.806.3200">760-806-3200</a></span><br>
+				<!--<span><strong>Territory Notes: </strong>South Texas - Minus El Paso</span>-->
+			</div>
+			<div class="social">
+				<span class="social">
+					<a  style="border-bottom: 0;" href="https://www.facebook.com/LamvinAcoustics/" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i><span class="sr-only">Facebook</span></a>
+					<a style="border-bottom: 0;" href="https://www.instagram.com/lamvinacoustics/" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a>
+					<a style="border-bottom: 0;" href="https://twitter.com/LamvinInc" rel="noopener noreferrer" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span></a>
+					<a style="border-bottom: 0;" href="https://www.linkedin.com/company/lamvin-inc/?trk=top_nav_home" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
+					<a style="border-bottom: 0;" href="https://www.youtube.com/channel/UCzWzqG1TkAuulETGFwBmSBQ" rel="noopener noreferrer" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i><span class="sr-only">Youtube</span></a>
+				</span>
+			</div>
+</div>
+		
+	</div>
+		
+</div>
