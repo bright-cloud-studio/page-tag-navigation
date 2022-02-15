@@ -11,15 +11,11 @@ function get_child_dropdown(){
         type:'POST',
         data:"val_parent="+parent_val+"",
         success:function(result){
-        	//$("#send_email_notification").html(result);
-        	//$("#request_form").hide();
-        	
         	// redirect us to the success page
         	window.location.replace("https://ampersandart.com/custom-calculator-success-message");
-        	
         },
         error:function(result){
-			$("#send_email_notification").html("SEND EMAIL FAIL");
+		$("#send_email_notification").html("SEND EMAIL FAIL");
         }
     });
 	
