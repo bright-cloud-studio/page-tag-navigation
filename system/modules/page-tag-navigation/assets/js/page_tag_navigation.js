@@ -12,7 +12,7 @@ function get_child_dropdown(){
         data:"val_parent="+parent_val+"",
         success:function(result){
         	// redirect us to the success page
-        	window.location.replace("https://ampersandart.com/custom-calculator-success-message");
+        	$("#dropdown_child").html(result);
         },
         error:function(result){
 		$("#error_messages").html("Error getting child dropdown");
