@@ -23,7 +23,7 @@ class PageTagNavigationModule extends \Contao\Module
      * Template
      * @var string
      */
-    protected $strTemplate = 'page_tag_navigation_module';
+    protected $strTemplate = 'mod_page_tag_navigation';
  
 	protected $arrStates = array();
  
