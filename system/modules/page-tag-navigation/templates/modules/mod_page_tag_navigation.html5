@@ -9,9 +9,14 @@
 
 	<div id="dropdown_parent" class="dropdown_parent" onchange="get_child_dropdown();">
 		<select id="select_parent">
-			<option>Parent Option #1</option>
-			<option>Parent Option #2</option>
-			<option>Parent Option #3</option>
+			<?php
+				$this->import('Database');
+				$result = $this->Database->prepare("SELECT * FROM tl_parent_category WHERE published=1")->execute();
+				while($result->next())
+				{
+					echo '<option id="'. $result->id.'">' . $result->label . '</option>';
+				}
+			?>
 		</select>
 	</div>
 	
