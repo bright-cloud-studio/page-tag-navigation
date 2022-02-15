@@ -6,7 +6,7 @@ function get_child_dropdown(){
 	  
     // trigger this function when our form runs
     $.ajax({
-        url:'/system/modules/panel_pricing_calculator/assets/php/action.get.child.dropdown.php',
+        url:'/system/modules/page-tag-navigation/assets/php/action.get.child.dropdown.php',
         type:'POST',
         data:"val_parent="+parent_val+"",
         success:function(result){
