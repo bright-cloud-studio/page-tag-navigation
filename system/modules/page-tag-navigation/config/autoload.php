@@ -19,4 +19,13 @@ ClassLoader::addClasses(array
 	'Bcs\Model\PageTagNavigation' 			=> 'system/modules/page-tag-navigation/library/Bcs/Model/PageTagNavigation.php',
 	'Bcs\Backend\ParentCategoryBackend' 		=> 'system/modules/page-tag-navigation/library/Bcs/Backend/ParentCategoryBackend.php',
 	'Bcs\Backend\ChildCategoryBackend' 		=> 'system/modules/page-tag-navigation/library/Bcs/Backend/ChildCategoryBackend.php',
+	'Bcs\Module\PageTagNavigationModule' 		=> 'system/modules/page-tag-navigation/library/Bcs/Module/PageTagNavigationModule.php',
+));
+
+/* Register the templates */
+TemplateLoader::addFiles(array
+(
+	'page_tag_navigation_module' 		=> 'system/modules/page-tag-navigation/templates/modules',
+	'dropdown_parent' 			=> 'system/modules/page-tag-navigation/templates/dropdowns',
+	'dropdown_child' 			=> 'system/modules/page-tag-navigation/templates/dropdowns',
 ));
