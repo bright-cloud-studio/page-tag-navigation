@@ -1,0 +1,14 @@
+<!–– This is for each listing, list off each one ––>
+<div class="location_full" style="display:none; padding-bottom: 40px;" id="id_<?= $this->id; ?>">
+	<div class='name'><?php echo "<span><strong>" . $this->name . "</strong>"; ?></div>
+	<div class='address'>
+		<?php if($this->contact_name != ""){echo "<span>" . $this->contact_name . "</span><br>";} ?>
+		<?php if($this->phone != ""){echo "<span><a href='" . $this->phone . "'>" . $this->phone . "</a></span><br>";} ?>
+		<?php if($this->url != ""){echo "<span><a href='" . $this->url . "' target=\"_blank\" rel=\"noopener\">" . Wesbite . "</a></span><br>";} ?>
+		<?php if($this->territory_notes != ""){echo "<span>" . $this->territory_notes . "</span><br>";} ?>
+	</div>
+	<!–– Searchable zips ––>
+	<div class="hidden_zip" style="display:none;">
+		<?php echo $this->zip; ?>
+	</div>
+</div>
