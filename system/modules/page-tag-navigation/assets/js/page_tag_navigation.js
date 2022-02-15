@@ -2,7 +2,7 @@
 function get_child_dropdown(){
 
     // store our quote request values
-    var parent_val = $("#dropdown_parent").val();
+    var parent_val = $("#select_parent").val();
 	  
     // trigger this function when our form runs
     $.ajax({
