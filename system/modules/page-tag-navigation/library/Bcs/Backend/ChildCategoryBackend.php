@@ -19,6 +19,11 @@ use Bcs\Model\ChildCategory;
 class ChildCategoryBackend extends \Backend
 {
 
+	public function getItemTemplates()
+	{
+		return $this->getTemplateGroup('item_dropdown_child');
+	}
+	
     public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
     {
       if (strlen(\Input::get('tid')))
