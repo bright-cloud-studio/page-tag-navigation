@@ -8,7 +8,7 @@ function get_child_dropdown(){
     $.ajax({
         url:'/system/modules/page-tag-navigation/assets/php/action.get.child.dropdown.php',
         type:'POST',
-        data:"val_parent="+parent_val+"",
+        data:"parent_val="+parent_val+"",
         success:function(result){
         	// redirect us to the success page
         	$("#dropdown_child").html(result);
