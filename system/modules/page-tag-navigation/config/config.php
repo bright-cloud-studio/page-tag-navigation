@@ -26,6 +26,9 @@ $GLOBALS['BE_MOD']['page-tag-navigation']['child_category'] = array(
 	'exportLocations' => array('Bcs\Backend\ChildCategoryBackend', 'exportChildCategory')
 );
 
+/* Front end modules */
+$GLOBALS['FE_MOD']['page-tag-navigation']['page_tag_navigation_module'] 	= 'Bcs\Module\PageTagNavigationModule';
+
 /* Models */
 $GLOBALS['TL_MODELS']['tl_parent_category'] = 'Bcs\Model\ParentCategory';
 $GLOBALS['TL_MODELS']['tl_child_category'] = 'Bcs\Model\ChildCategory';
