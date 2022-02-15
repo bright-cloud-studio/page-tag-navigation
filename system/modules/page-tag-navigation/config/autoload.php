@@ -25,7 +25,7 @@ ClassLoader::addClasses(array
 /* Register the templates */
 TemplateLoader::addFiles(array
 (
-	'page_tag_navigation_module' 		=> 'system/modules/page-tag-navigation/templates/modules',
-	'dropdown_parent' 			=> 'system/modules/page-tag-navigation/templates/dropdowns',
-	'dropdown_child' 			=> 'system/modules/page-tag-navigation/templates/dropdowns',
+	'mod_page_tag_navigation' 		=> 'system/modules/page-tag-navigation/templates/modules',
+	'item_dropdown_parent' 			=> 'system/modules/page-tag-navigation/templates/items',
+	'item_dropdown_child' 			=> 'system/modules/page-tag-navigation/templates/items',
 ));
