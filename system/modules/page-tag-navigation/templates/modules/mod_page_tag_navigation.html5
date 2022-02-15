@@ -1,20 +1,22 @@
 <!–– Wrapper for the whole module on the page ––>
 <div class="mod_page_tag_navigation <?= $this->class ?>">
 	
+	<div id="error_messages"></div>
+	
 	<?php if ($this->headline): ?>
 		<<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
 	<?php endif; ?>
 
-	<div class="dropdown_parent">
-		<select>
+	<div id="dropdown_parent" class="dropdown_parent" onchange="get_child_dropdown();">
+		<select id="select_parent">
 			<option>Parent Option #1</option>
 			<option>Parent Option #2</option>
 			<option>Parent Option #3</option>
 		</select>
 	</div>
 	
-	<div class="dropdown_child">
-		<select>
+	<div id="dropdown_child" class="dropdown_child">
+		<select id="select_child">
 			<option>Child Option #1</option>
 			<option>Child Option #2</option>
 			<option>Child Option #3</option>
