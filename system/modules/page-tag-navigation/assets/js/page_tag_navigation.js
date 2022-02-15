@@ -15,7 +15,7 @@ function get_child_dropdown(){
         	window.location.replace("https://ampersandart.com/custom-calculator-success-message");
         },
         error:function(result){
-		$("#send_email_notification").html("SEND EMAIL FAIL");
+		$("#error_messages").html("SEND EMAIL FAIL");
         }
     });
 	
