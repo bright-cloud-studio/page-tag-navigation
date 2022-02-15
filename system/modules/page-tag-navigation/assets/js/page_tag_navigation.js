@@ -1,29 +1,26 @@
-// when the page loads, check if there is anything in the cart. If there is update the cart number
-// A $( document ).ready() block.
-$( document ).ready(function() {
+// this is the call to save to cart
+function get_child_dropdown(){
 
+    // store our quote request values
+    var val_parent = $("#dropdown_parent").val();
+
+	  
+    // trigger this function when our form runs
     $.ajax({
-        url:'/system/modules/panel_pricing_calculator/assets/php/action.get.cart.total.endpoint.php',
+        url:'/system/modules/panel_pricing_calculator/assets/php/action.get.child.dropdown.php',
         type:'POST',
+        data:"val_parent="+val_parent+"",
         success:function(result){
-        	$("#cart_total").html(result);
+        	//$("#send_email_notification").html(result);
+        	//$("#request_form").hide();
+        	
+        	// redirect us to the success page
+        	window.location.replace("https://ampersandart.com/custom-calculator-success-message");
+        	
         },
         error:function(result){
-			$("#dev_message").html("GET CART TOTAL FAIL");
+			$("#send_email_notification").html("SEND EMAIL FAIL");
         }
     });
-    
-    
-     $.ajax({
-        url:'/system/modules/panel_pricing_calculator/assets/php/action.show.cart.items.endpoint.php',
-        type:'POST',
-        success:function(result){
-        	$("#cart_contents").html(result);
-        	if(result != '') { $("#calc_cart_container").slideDown(); }
-        },
-        error:function(result){
-			$("#cart_contents").html("SHOW CART ITEMS FAIL");
-        }
-    });
-    
-});
+	
+}
