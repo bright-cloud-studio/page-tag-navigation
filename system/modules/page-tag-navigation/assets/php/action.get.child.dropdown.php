@@ -3,15 +3,14 @@
 // Starts the session and connects to the database
 include_once("prepend.page_tag_navigation.endpoint.php");
 
-// Holds the variables that were sent to this script from the ajax call
 $vars = $_POST;
 
-$message = '<select id="dropdown_child" class="dropdown_child">';
+$message = '<select id="select_child" class="select_child" onchange="push_to_target();"><option>Default Child Option</option>';
 
 
 $dbh = new mysqli("localhost", "oces_user", "cnLtU3L0fD8PNurD)R", "oces_contao_4_9");
 if ($dbh->connect_error) {
-	die("Connection failed: " . $dbh->connect_error);
+  die("Connection failed: " . $dbh->connect_error);
 }
 
 $sorting_number = 0;
@@ -28,8 +27,21 @@ if($result) {
 				$linked = 1;
 			}
 		}
-		if($linked == 1)
-			$message = $message . '<option>' . $row['label'] . '</option>'; 
+		if($linked == 1){
+		
+			$page_url = '';
+			
+			$page_url = getPageAliasByTarget($page_url, $row['id']);
+		
+			if($page_url != '')
+			{
+				$message = $message . '<option value="'.$page_url.'">' . $row['label'] . '</option>';
+			} else {
+				$message = $message . '<option>' . $row['label'] . '</option>';
+			}
+			
+			 
+		}
 		
 	}
 }
@@ -37,3 +49,45 @@ if($result) {
 
 $message = $message . '</select>';
 echo $message;
+
+
+function getPageAliasByTarget($page_url, $id) {
+	
+	$dbh = new mysqli("localhost", "oces_user", "cnLtU3L0fD8PNurD)R", "oces_contao_4_9");
+	if ($dbh->connect_error) {
+	  die("Connection failed: " . $dbh->connect_error);
+	}
+	
+	$query2 =  "select * from tl_page WHERE page_tag_navigation_target=" . $id;
+	$result2 = $dbh->query($query2);
+	if($result2) {
+		while($row2 = $result2->fetch_assoc()) {
+			$alias = "/" . $row2['alias'];
+			
+			//if($row2['pid'] >= 2)
+				//$page_url = getPageAliasByID($page_url, $row2['pid']) . $alias;
+			//else
+				//$page_url .= $alias;
+			$page_url .= $alias . ".html";
+		}
+	}
+	return $page_url;
+}
+function getPageAliasByID($page_url, $id) {
+	
+	$dbh = new mysqli("localhost", "oces_user", "cnLtU3L0fD8PNurD)R", "oces_contao_4_9");
+	if ($dbh->connect_error) {
+	  die("Connection failed: " . $dbh->connect_error);
+	}
+	
+	$query2 =  "select * from tl_page WHERE id=" . $id;
+	$result2 = $dbh->query($query2);
+	if($result2) {
+		while($row2 = $result2->fetch_assoc()) {
+			$page_url = $page_url . "/" . $row2['alias'];
+			if($row2['pid'] >= 2)
+				$page_url = getPageAliasByID($page_url, $row2['pid']) . $page_url;
+		}
+	}
+	return $page_url;
+}
