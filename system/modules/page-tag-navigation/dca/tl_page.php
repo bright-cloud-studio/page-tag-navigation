@@ -30,8 +30,18 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_target'] = array
 $GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_target'] = array
 (
 	'sql'                   => "varchar(255) NOT NULL default ''",
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target'],
+	'label'			        => &$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target'],
 	'inputType'             => 'radio',
-	'options_callback'	=> array('Bcs\Backend\ChildCategoryBackend', 'getChildCategories'),										
-	'eval'                  => array('multiple'=>true, 'mandatory'=>false,'tl_class'=>'clr') 
+	'options_callback'	    => array('Bcs\Backend\ChildCategoryBackend', 'getChildCategories'),										
+	'eval'                  => array('multiple'=>true, 'mandatory'=>false,'tl_class'=>'w50') 
+);
+
+$GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_anchor_target'] = array
+(
+	'label'			        => &$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target'],
+	'inputType'             => 'text',
+    'default'               => '',
+    'search'                => true,
+    'eval'                  => array('mandatory'=>true, 'tl_class'=>'clr w50'),
+    'sql'                   => "varchar(255) NOT NULL default ''"
 );
