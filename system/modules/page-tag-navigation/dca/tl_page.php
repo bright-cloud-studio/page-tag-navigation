@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_target'] = array
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_anchor_target'] = array
 (
-	'label'			        => &$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_target'],
+	'label'			        => &$GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_anchor_target'],
 	'inputType'             => 'text',
     'default'               => '',
     'search'                => true,
