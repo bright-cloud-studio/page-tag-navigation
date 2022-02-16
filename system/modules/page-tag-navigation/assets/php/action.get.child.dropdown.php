@@ -3,6 +3,7 @@
 // Starts the session and connects to the database
 include_once("prepend.page_tag_navigation.endpoint.php");
 
+// Holds the variables that were sent to this script from the ajax call
 $vars = $_POST;
 
 $message = '<select id="dropdown_child" class="dropdown_child">';
