@@ -5,7 +5,7 @@ include_once("prepend.page_tag_navigation.endpoint.php");
 
 $vars = $_POST;
 
-$message = '';
+$message = '<select id="dropdown_child" class="dropdown_child">';
 
 
 $dbh = new mysqli("localhost", "oces_user", "cnLtU3L0fD8PNurD)R", "oces_contao_4_9");
@@ -18,10 +18,21 @@ $query =  "select * from tl_child_category WHERE published=1";
 $result = $dbh->query($query);
 if($result) {
   while($row = $result->fetch_assoc()) {
-    $message = $message . $row['label'];
-  }
+  	
+		$parents = unserialize($row['pid']);
+	
+		$linked = 0;
+		foreach ($parents as &$value) {
+			if($value == $vars['parent_val']){
+				$linked = 1;
+			}
+		}
+		if($linked == 1)
+			$message = $message . '<option>' . $row['label'] . '</option>'; 
+		
+	}
 }
 
 
-//$message = "Ding" . $vars['parent_val'];
+$message = $message . '</select>';
 echo $message;
