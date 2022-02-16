@@ -42,6 +42,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['page_tag_navigation_anchor_target'] = a
 	'inputType'             => 'text',
     'default'               => '',
     'search'                => true,
-    'eval'                  => array('mandatory'=>true, 'tl_class'=>'clr w50'),
+    'eval'                  => array('mandatory'=>true, 'tl_class'=>'w50'),
     'sql'                   => "varchar(255) NOT NULL default ''"
 );
