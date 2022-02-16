@@ -155,15 +155,6 @@ $GLOBALS['TL_DCA']['tl_child_category'] = array
 			'eval'                    => array('mandatory'=>true, 'tl_class'=>'clr w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
-        'anchor_target' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_child_category']['anchor_target'],
-			'inputType'               => 'text',
-			'default'				  => '',
-			'search'                  => true,
-			'eval'                    => array('mandatory'=>true, 'tl_class'=>'clr w50'),
-			'sql'                     => "varchar(255) NOT NULL default ''"
-		),
 		'published' => array
 		(
 			'exclude'                 => true,
