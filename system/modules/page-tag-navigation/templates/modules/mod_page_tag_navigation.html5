@@ -9,6 +9,7 @@
 
 	<div id="dropdown_parent" class="dropdown_parent" onchange="get_child_dropdown();">
 		<select id="select_parent">
+			<option>Default Parent Option...</option>
 			<?php
 				$this->import('Database');
 				$result = $this->Database->prepare("SELECT * FROM tl_parent_category WHERE published=1")->execute();
@@ -21,10 +22,8 @@
 	</div>
 	
 	<div id="dropdown_child" class="dropdown_child">
-		<select id="select_child">
-			<option>Child Option #1</option>
-			<option>Child Option #2</option>
-			<option>Child Option #3</option>
+		<select id="select_child" disabled>
+			<option>Default Parent Option...</option>
 		</select>
 	</div>
 		
