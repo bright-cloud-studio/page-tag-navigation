@@ -21,7 +21,8 @@ $GLOBALS['TL_LANG']['tl_child_category']['publish_legend'] 	= 'Publish';
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_child_category']['alias'] 			= array('Alias', 'Auto-generated alias.');
-$GLOBALS['TL_LANG']['tl_child_category']['label'] 				= array('Label', 'Child category label');
+$GLOBALS['TL_LANG']['tl_child_category']['label'] 			= array('Label', 'Child category label');
+$GLOBALS['TL_LANG']['tl_child_category']['linked_parent'] 	= array('Linked Parent', 'The parent category this will show under once selected');
 $GLOBALS['TL_LANG']['tl_child_category']['published'] 		= array('Published', 'Show this record on the front end.');
  
  /**
