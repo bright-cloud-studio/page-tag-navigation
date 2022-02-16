@@ -19,3 +19,10 @@ function get_child_dropdown(){
     });
 	
 }
+
+// this is the call to save to cart
+function push_to_target(){
+	var child_val = $("#select_child").val();
+	window.location.href = child_val;
+	
+}
