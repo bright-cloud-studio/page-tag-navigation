@@ -3,7 +3,7 @@
 
 
 
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{date_legend', ';{page_tag_navigation_defaults_legend},parentDefault,childDefault;{date_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{date_legend', ';{page_tag_navigation_default_legend},parentDefault,childDefault;{date_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
 
 
 /**
