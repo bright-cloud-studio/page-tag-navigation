@@ -116,14 +116,13 @@ $GLOBALS['TL_DCA']['tl_child_category'] = array
         (
             'sql'                     => "int(10) unsigned NOT NULL auto_increment"
         ),
-		
-		    'pid' => array
+		'pid' => array
         (
             'sql'                     => "varchar(255) NOT NULL default ''",
-			      'label'                   => &$GLOBALS['TL_LANG']['tl_child_category']['categories'],
-			      'inputType'               => 'checkbox',
-			      'options_callback'		  => array('Bcs\Backend\ChildCategoryBackend', 'getParentCategories'),										
-			      'eval'                    => array('multiple'=>true, 'mandatory'=>true,'tl_class'=>'clr') 
+            'label'                   => &$GLOBALS['TL_LANG']['tl_child_category']['linked_parent'],
+            'inputType'               => 'checkbox',
+            'options_callback'		  => array('Bcs\Backend\ChildCategoryBackend', 'getParentCategories'),										
+            'eval'                    => array('multiple'=>true, 'mandatory'=>true,'tl_class'=>'clr') 
         ),
         'tstamp' => array
         (
