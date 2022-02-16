@@ -10,7 +10,7 @@ $message = '<select id="dropdown_child" class="dropdown_child">';
 
 $dbh = new mysqli("localhost", "oces_user", "cnLtU3L0fD8PNurD)R", "oces_contao_4_9");
 if ($dbh->connect_error) {
-  die("Connection failed: " . $dbh->connect_error);
+	die("Connection failed: " . $dbh->connect_error);
 }
 
 $sorting_number = 0;
