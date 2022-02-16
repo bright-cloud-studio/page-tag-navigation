@@ -1,11 +1,27 @@
-
 <?php
+
 // Starts the session and connects to the database
 include_once("prepend.page_tag_navigation.endpoint.php");
 
 $vars = $_POST;
+$message = '<select id="select_child" class="select_child" onchange="push_to_target();">';
 
-$message = '<select id="select_child" class="select_child" onchange="push_to_target();"><option>Default Child Option</option>';
+
+// open the contao localconfig.php file and get our default child option
+if ($file = fopen("/home/oces/public_html/system/config/localconfig.php", "r")) {
+    while(!feof($file)) {
+        $line = fgets($file);
+		
+		if(strpos($line, 'childDefault') !== false){
+			$stripFront = substr($line, 41);
+			$stripEnd = substr($stripFront, 0, -3);
+			$message .= '<option>' . $stripEnd . '</option>';
+		}
+    }
+    fclose($file);
+}  
+
+
 
 
 $dbh = new mysqli("localhost", "oces_user", "cnLtU3L0fD8PNurD)R", "oces_contao_4_9");
