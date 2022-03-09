@@ -172,17 +172,9 @@ class ChildCategoryBackend extends \Backend
 			if($exists != true)
 				$cats = $cats + array($result->id => $result->label);
 		}
-		
 
 		return $cats;
-		
-		
-		#return array(
-		#	'1' => 'Onee',
-		#	'2' => 'Twoo',
-		#	'3' => 'Threee',
-		#	'4' => 'Fourr'
-		#);
+
 	}
 	
 }
