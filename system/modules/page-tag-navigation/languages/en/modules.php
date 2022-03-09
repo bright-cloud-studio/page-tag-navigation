@@ -2,16 +2,15 @@
 <?php
 
 /**
- * Locations - Location Plugin for Contao
+ * Bright Cloud Studio's Page Tag Navigation
  *
- * Copyright (C) 2018 Andrew Stevens
+ * Copyright (C) 2022 Bright Cloud Studio
  *
- * @package    asconsulting/locations
- * @link       http://andrewstevens.consulting
+ * @package    bright-cloud-studio/page-tag-navigation
+ * @link       https://www.brightcloudstudio.com/
  * @license    http://opensource.org/licenses/lgpl-3.0.html
- */
+**/
 
- 
 /* Front end modules */
 $GLOBALS['TL_LANG']['FMD']['page_tag_navigation_module'] 	= array('Page Tag Navigation Module', 'The front end module that displays the Page Tag Navigation dropdowns.');
 
