@@ -140,15 +140,8 @@ class ChildCategoryBackend extends \Backend
 		{
 			$cats = $cats + array($result->id => $result->label);
 		}
+        
 		return $cats;
-		
-		
-		#return array(
-		#	'1' => 'Onee',
-		#	'2' => 'Twoo',
-		#	'3' => 'Threee',
-		#	'4' => 'Fourr'
-		#);
 	}
 	
 	public function getChildCategories(DataContainer $dc) { 
@@ -174,7 +167,6 @@ class ChildCategoryBackend extends \Backend
 		}
 
 		return $cats;
-
 	}
 	
 }
