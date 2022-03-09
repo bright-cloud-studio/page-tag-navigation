@@ -1,19 +1,17 @@
 <?php
 
 /**
- * Locations - Location Plugin for Contao
+ * Bright Cloud Studio's Page Tag Navigation
  *
- * Copyright (C) 2018 Andrew Stevens
+ * Copyright (C) 2022 Bright Cloud Studio
  *
- * @package    asconsulting/locations
- * @link       http://andrewstevens.consulting
+ * @package    bright-cloud-studio/page-tag-navigation
+ * @link       https://www.brightcloudstudio.com/
  * @license    http://opensource.org/licenses/lgpl-3.0.html
- */
+**/
 
- 
-/**
- * Table tl_location
- */
+
+/* Table tl_location */
 $GLOBALS['TL_DCA']['tl_child_category'] = array
 (
  
