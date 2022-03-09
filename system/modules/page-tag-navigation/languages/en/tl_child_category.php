@@ -1,33 +1,27 @@
 <?php
 
 /**
- * Locations - Location Plugin for Contao
+ * Bright Cloud Studio's Page Tag Navigation
  *
- * Copyright (C) 2018 Andrew Stevens
+ * Copyright (C) 2022 Bright Cloud Studio
  *
- * @package    asconsulting/locations
- * @link       http://andrewstevens.consulting
+ * @package    bright-cloud-studio/page-tag-navigation
+ * @link       https://www.brightcloudstudio.com/
  * @license    http://opensource.org/licenses/lgpl-3.0.html
- */
+**/
 
 
-/**
- * Legends
- */
+/* Legends */
 $GLOBALS['TL_LANG']['tl_child_category']['category_legend'] 	= 'Child Category Details';
 $GLOBALS['TL_LANG']['tl_child_category']['publish_legend'] 	= 'Publish';
 
-/**
- * Fields
- */
+/* Fields */
 $GLOBALS['TL_LANG']['tl_child_category']['alias'] 			= array('Alias', 'Auto-generated alias.');
 $GLOBALS['TL_LANG']['tl_child_category']['label'] 			= array('Label', 'Child category label');
 $GLOBALS['TL_LANG']['tl_child_category']['linked_parent'] 	= array('Linked Parent', 'The parent category this will show under once selected');
 $GLOBALS['TL_LANG']['tl_child_category']['published'] 		= array('Published', 'Show this record on the front end.');
  
- /**
- * Buttons
- */
+ /* Buttons */
 $GLOBALS['TL_LANG']['tl_child_category']['new']   			= array('New record', 'Add a new record');
 $GLOBALS['TL_LANG']['tl_child_category']['show']  		 	= array('Record details', 'Show the details of record ID %s');
 $GLOBALS['TL_LANG']['tl_child_category']['edit']  		 	= array('Edit record', 'Edit record ID %s');
