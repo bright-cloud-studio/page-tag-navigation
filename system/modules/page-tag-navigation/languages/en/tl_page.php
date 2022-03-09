@@ -10,7 +10,6 @@
  * @license    http://opensource.org/licenses/lgpl-3.0.html
 **/
 
-
 /* Legends */
 $GLOBALS['TL_LANG']['tl_page']['page_tag_navigation_legend'] = 'Page Tag Navigation\'s Settings';
 
