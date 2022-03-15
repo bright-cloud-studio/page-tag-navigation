@@ -67,10 +67,14 @@ class PageTagNavigationModule extends \Contao\Module
      */
     protected function compile()
     {
+        // BROKEN IN CONTAO 4.13 - NEEDS TO BE UPDATED
 		// add our js
-		if (!in_array('<script src="system/modules/page-tag-navigation/assets/js/page_tag_navigation.js"></script>', $GLOBALS['TL_BODY'])) { 
-			$GLOBALS['TL_BODY'][] = '<script src="system/modules/page-tag-navigation/assets/js/page_tag_navigation.js"></script>';
-		}
+		//if (!in_array('<script src="system/modules/page-tag-navigation/assets/js/page_tag_navigation.js"></script>', $GLOBALS['TL_BODY'])) { 
+			//$GLOBALS['TL_BODY'][] = '<script src="system/modules/page-tag-navigation/assets/js/page_tag_navigation.js"></script>';
+		//}
+        //
+        
+        
 	    
 	    /*
 		$objLocation = Location::findBy('published', '1');
