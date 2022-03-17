@@ -74,6 +74,8 @@ class PageTagNavigationModule extends \Contao\Module
 		//}
         //
         
+        // Add our custom js file
+        $GLOBALS['TL_BODY'][] = '<script src="system/modules/page-tag-navigation/assets/js/page_tag_navigation.js"></script>';
         
 	    
 	    /*
