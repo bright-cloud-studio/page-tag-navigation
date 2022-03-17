@@ -9,8 +9,28 @@
 
 	<div id="dropdown_parent" class="dropdown_parent" onchange="get_child_dropdown();">
 		<select id="select_parent">
-			<option>Default Parent Option...</option>
 			<?php
+				// open the contao localconfig.php file and get our default child option
+				$childDefault = '';
+				if ($file = fopen("/home/oces/public_html/system/config/localconfig.php", "r")) {
+				    while(!feof($file)) {
+				        $line = fgets($file);
+						
+						if(strpos($line, 'parentDefault') !== false){
+							$stripFront = substr($line, 42);
+							$stripEnd = substr($stripFront, 0, -3);
+							echo '<option>' . $stripEnd . '</option>';
+						}
+						if(strpos($line, 'childDefault') !== false){
+							$stripFront = substr($line, 41);
+							$stripEnd = substr($stripFront, 0, -3);
+							$childDefault =  '<option>' . $stripEnd . '</option>';
+						}
+				    }
+				    fclose($file);
+				} 
+				
+				// get our parent category options
 				$this->import('Database');
 				$result = $this->Database->prepare("SELECT * FROM tl_parent_category WHERE published=1")->execute();
 				while($result->next())
@@ -23,7 +43,7 @@
 	
 	<div id="dropdown_child" class="dropdown_child">
 		<select id="select_child" disabled>
-			<option>Default Parent Option...</option>
+			<?php echo $childDefault; ?>
 		</select>
 	</div>
 		
