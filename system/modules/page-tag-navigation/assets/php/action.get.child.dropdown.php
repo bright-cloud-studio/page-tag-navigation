@@ -84,7 +84,10 @@ function getPageAliasByTarget($page_url, $id) {
 				//$page_url = getPageAliasByID($page_url, $row2['pid']) . $alias;
 			//else
 				//$page_url .= $alias;
-			$page_url .= $alias . ".html";
+            
+            // this page has no prepend
+			//$page_url .= $alias . ".html";
+            $page_url .= $alias;
 		}
 	}
 	return $page_url;
