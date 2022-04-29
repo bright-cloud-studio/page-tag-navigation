@@ -11,7 +11,7 @@ $( document ).ready(function() {
     	scrollToAnchor(our_target);
     	
     	// add bouncing ball
-    	addBouncingBall(our_target);
+    	addBouncingBall("#"+our_target);
     	
     	// clear our stored target
     	clearSessionTarget();
@@ -24,7 +24,7 @@ $( document ).ready(function() {
 // scroll the page to the target
 function scrollToAnchor(aid){
     var aTag = $("div[id='"+ aid +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top-100},'slow');
+    $('html,body').animate({scrollTop: aTag.offset().top-200},'slow');
 }
 
 // ajax call script to clear out our target
@@ -46,5 +46,13 @@ function clearSessionTarget() {
 }
 
 function addBouncingBall(target_id) {
-	$("#"+target_id).prepend( '<div class="target_ball"></div>' );
+	$(target_id).prepend( '<div class="target_ball"></div>' );
+	
+	
+	setInterval(function() {
+        $(".target_ball").effect( "bounce", {times:3, distance: 20}, 500 );
+    }, 1500);
+	
+	
+	
 }
