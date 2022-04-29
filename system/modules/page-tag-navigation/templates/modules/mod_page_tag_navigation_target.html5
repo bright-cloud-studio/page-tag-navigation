@@ -1,5 +1,1 @@
-<?php session_start(); ?>
-<!–– Wrapper for the whole module on the page ––>
-<div class="mod_page_tag_navigation <?= $this->class ?>">
-	PTN Target: <?php echo $_SESSION["ptn_target"]; ?>
-</div>
+
