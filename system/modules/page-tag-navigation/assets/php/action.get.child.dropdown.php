@@ -88,6 +88,11 @@ function getPageAliasByTarget($page_url, $id) {
             // this page has no prepend
 			//$page_url .= $alias . ".html";
             $page_url .= $alias;
+            
+            // If there is a target, save it to our session
+            if($row2['page_tag_navigation_anchor_target'] != '')
+                $_SESSION["ptn_target"] = $row2['page_tag_navigation_anchor_target'];
+            
 		}
 	}
 	return $page_url;
