@@ -1,28 +1,22 @@
-// this is the call to save to cart
-function get_child_dropdown(){
+// When the page is loaded, get our target
+$( document ).ready(function() {
+    var our_target = getTarget();
+    alert("PTN_TARGET: " . our_target);
+    console.log("PTN_TARGET: " . our_target);
+});
 
-	// store our quote request values
-	var parent_val = $('#select_parent').children(":selected").attr("id");
-	  
-    // trigger this function when our form runs
+function getTarget() {
+    
+    // get target from php session
     $.ajax({
-        url:'/system/modules/page-tag-navigation/assets/php/action.get.child.dropdown.php',
+        url:'/system/modules/page-tag-navigation/assets/php/action.get.target.php',
         type:'POST',
-        data:"parent_val="+parent_val+"",
         success:function(result){
-        	// redirect us to the success page
-        	$("#dropdown_child").html(result);
+        	return result;
         },
         error:function(result){
-		$("#error_messages").html("Error getting child dropdown");
+            return "error getting session ptn_target";
         }
     });
-	
-}
-
-// this is the call to save to cart
-function push_to_target(){
-	var child_val = $("#select_child").val();
-	window.location.href = child_val;
 	
 }
