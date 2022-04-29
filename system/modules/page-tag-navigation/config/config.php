@@ -24,7 +24,8 @@ $GLOBALS['BE_MOD']['page-tag-navigation']['child_category'] = array(
 );
 
 /* Front end modules */
-$GLOBALS['FE_MOD']['page-tag-navigation']['page_tag_navigation_module'] 	= 'Bcs\Module\PageTagNavigationModule';
+$GLOBALS['FE_MOD']['page-tag-navigation']['page_tag_navigation_module'] 		= 'Bcs\Module\PageTagNavigationModule';
+$GLOBALS['FE_MOD']['page-tag-navigation']['page_tag_navigation_target_module'] 	= 'Bcs\Module\PageTagNavigationTargetModule';
 
 /* Models */
 $GLOBALS['TL_MODELS']['tl_parent_category'] = 'Bcs\Model\ParentCategory';
