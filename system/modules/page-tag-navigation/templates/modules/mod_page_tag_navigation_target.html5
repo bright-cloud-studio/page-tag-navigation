@@ -1,0 +1,4 @@
+<!–– Wrapper for the whole module on the page ––>
+<div class="mod_page_tag_navigation <?= $this->class ?>">
+	This is the Page Tag Navigation Target Module
+</div>
