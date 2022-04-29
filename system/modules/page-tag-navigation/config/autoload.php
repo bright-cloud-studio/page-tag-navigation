@@ -16,16 +16,18 @@
  */
 ClassLoader::addClasses(array
 (
-	'Bcs\Model\PageTagNavigation' 			=> 'system/modules/page-tag-navigation/library/Bcs/Model/PageTagNavigation.php',
-	'Bcs\Backend\ParentCategoryBackend' 		=> 'system/modules/page-tag-navigation/library/Bcs/Backend/ParentCategoryBackend.php',
-	'Bcs\Backend\ChildCategoryBackend' 		=> 'system/modules/page-tag-navigation/library/Bcs/Backend/ChildCategoryBackend.php',
-	'Bcs\Module\PageTagNavigationModule' 		=> 'system/modules/page-tag-navigation/library/Bcs/Module/PageTagNavigationModule.php',
+	'Bcs\Model\PageTagNavigation' 					=> 'system/modules/page-tag-navigation/library/Bcs/Model/PageTagNavigation.php',
+	'Bcs\Backend\ParentCategoryBackend' 			=> 'system/modules/page-tag-navigation/library/Bcs/Backend/ParentCategoryBackend.php',
+	'Bcs\Backend\ChildCategoryBackend' 				=> 'system/modules/page-tag-navigation/library/Bcs/Backend/ChildCategoryBackend.php',
+	'Bcs\Module\PageTagNavigationModule' 			=> 'system/modules/page-tag-navigation/library/Bcs/Module/PageTagNavigationModule.php',
+	'Bcs\Module\PageTagNavigationTargetModule' 		=> 'system/modules/page-tag-navigation/library/Bcs/Module/PageTagNavigationTargetModule.php',
 ));
 
 /* Register the templates */
 TemplateLoader::addFiles(array
 (
-	'mod_page_tag_navigation' 		=> 'system/modules/page-tag-navigation/templates/modules',
-	'item_dropdown_parent' 			=> 'system/modules/page-tag-navigation/templates/items',
-	'item_dropdown_child' 			=> 'system/modules/page-tag-navigation/templates/items',
+	'mod_page_tag_navigation' 				=> 'system/modules/page-tag-navigation/templates/modules',
+	'mod_page_tag_navigation_target' 		=> 'system/modules/page-tag-navigation/templates/modules',
+	'item_dropdown_parent' 					=> 'system/modules/page-tag-navigation/templates/items',
+	'item_dropdown_child' 					=> 'system/modules/page-tag-navigation/templates/items',
 ));
