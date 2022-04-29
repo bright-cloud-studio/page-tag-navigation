@@ -1,1 +1,5 @@
+<?php session_start(); ?>
 
+<div class="mod_page_tag_navigation <?= $this->class ?>" style="display: none;" >
+	<div id="target_holder"><?php echo $_SESSION["ptn_target"]; ?></div>
+</div>
