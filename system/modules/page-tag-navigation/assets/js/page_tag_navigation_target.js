@@ -4,6 +4,8 @@ $( document ).ready(function() {
 	// get our target from the module holder
     var our_target = $('#target_holder').text();
     
+    console.log("OUR TARGET: " + our_target);
+    
     // if our target isn't blank
     if(our_target != '') {
     	
