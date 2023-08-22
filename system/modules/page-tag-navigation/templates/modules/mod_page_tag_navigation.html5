@@ -1,13 +1,17 @@
 <!–– Wrapper for the whole module on the page ––>
-<div class="mod_page_tag_navigation <?= $this->class ?>">
+
+<div class="mod_page_tag_navigation <?= $this->class ?> ptn_<?= $this->id; ?>">
 	
 	<div id="error_messages"></div>
 	
 	<?php if ($this->headline): ?>
-		<<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+	<!-- Manually added by RB -->
+		<h3>Get started
+		<span class="small">finding the services and info you need.</span>
+		</h3>
 	<?php endif; ?>
 
-	<div id="dropdown_parent" class="dropdown_parent" onchange="get_child_dropdown();">
+	<div id="dropdown_parent" class="dropdown dropdown_parent" onchange="get_child_dropdown('.ptn_<?= $this->id; ?>');">
 		<select id="select_parent">
 			<?php
 				// open the contao localconfig.php file and get our default child option
@@ -19,12 +23,12 @@
 						if(strpos($line, 'parentDefault') !== false){
 							$stripFront = substr($line, 42);
 							$stripEnd = substr($stripFront, 0, -3);
-							echo '<option>' . $stripEnd . '</option>';
+							echo '<option id="0">' . $stripEnd . '</option>';
 						}
 						if(strpos($line, 'childDefault') !== false){
 							$stripFront = substr($line, 41);
 							$stripEnd = substr($stripFront, 0, -3);
-							$childDefault =  '<option>' . $stripEnd . '</option>';
+							$childDefault =  '<option id="0">' . $stripEnd . '</option>';
 						}
 				    }
 				    fclose($file);
@@ -41,7 +45,7 @@
 		</select>
 	</div>
 	
-	<div id="dropdown_child" class="dropdown_child">
+	<div id="dropdown_child" class="dropdown_child dropdown">
 		<select id="select_child" disabled>
 			<?php echo $childDefault; ?>
 		</select>
